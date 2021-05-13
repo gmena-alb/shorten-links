@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+/*
+=============== 
+Variables
+===============
+*/
+
+:root {
+  /* Primary Colors */
+  --color-cyan: hsl(180, 66%, 49%);
+  --color-violet: hsl(257, 27%, 26%);
+
+  /* Secondary Colors */
+  --color-red: hsl(0, 87%, 67%);
+
+  /* Neutral color */
+  --color-white: hsl(0, 0%, 100%);
+  --color-grey: hsl(0, 0%, 75%);
+  --color-grey-violet: hsl(257, 7%, 63%);
+  --color-blue-dark: hsl(255, 11%, 22%);
+  --color-violet-dark: hsl(260, 8%, 14%);
+}
+
+/*
+=============== 
+Global Styles
+===============
+*/
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  color: var(--color-blue-dark);
+  line-height: 1.2;
+}
+
+p {
+  font-size: 1.7rem;
+  text-align: center;
+  font-weight: 500;
+  color: var(--color-grey-violet);
+  line-height: 1.6;
+}
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+
+.btn-blue {
+  background-color: var(--color-cyan);
+  border-radius: 3rem;
+  padding: 1rem 0;
+  color: white;
+  font-size: 1.8rem;
+  display: inline-block;
+
+  letter-spacing: 0.1rem;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(-180%);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-358%);
+  }
+}
