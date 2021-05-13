@@ -70,6 +70,11 @@ const Wrapper = styled.nav`
     padding: 4.5rem 2.5rem;
     text-align: center;
     font-size: 1.8rem;
+    position: absolute;
+    min-width: 88vw;
+    left: 50%;
+    width: auto;
+    transform: translateX(-50%);
     ul {
       border-bottom: 1px solid var(--color-grey);
       li:not(:last-child) {
