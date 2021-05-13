@@ -34,12 +34,24 @@ const Footer = () => {
 
 const Wrapper = styled.footer`
   background-color: var(--color-violet-dark);
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 7rem 16rem 0;
+  }
   h1 {
     color: var(--color-white);
     padding: 5rem 0 5.8rem;
+    @media (min-width: 1440px) {
+      padding: 0;
+      margin-right: 10rem;
+    }
   }
   .links-container {
     text-align: center;
+    @media (min-width: 1440px) {
+      text-align: left;
+    }
     .main-link {
       color: var(--color-white);
       margin-bottom: 2.6rem;
@@ -55,6 +67,9 @@ const Wrapper = styled.footer`
       padding-bottom: 4rem;
       li {
         margin-bottom: 1.2rem;
+        @media (min-width: 1440px) {
+          margin-right: 2rem;
+        }
       }
     }
   }
@@ -64,9 +79,18 @@ const Wrapper = styled.footer`
   .social {
     padding: 1rem 8.5rem 5.5rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     color: var(--color-white);
     font-size: 2.7rem;
+    @media (min-width: 1440px) {
+      padding: 0;
+    }
+    li:not(:last-child) {
+      margin-right: 2rem;
+      @media (min-width: 1440px) {
+        margin-right: 2rem;
+      }
+    }
   }
 `;
 

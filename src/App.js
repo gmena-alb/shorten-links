@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import Header from './components/Header';
 import ShortenSection from './components/ShortenSection';
 import BulletSection from './components/BulletSection';

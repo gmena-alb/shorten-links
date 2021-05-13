@@ -5,7 +5,14 @@ const Spinner = () => {
   return (
     <img
       src={spinner}
-      style={{ width: '50px', margin: 'auto', display: 'block' }}
+      style={{
+        gridRow: '2',
+        gridColumnStart: '1',
+        gridColumnEnd: '3',
+        width: '75px',
+        margin: 'auto',
+        display: 'block',
+      }}
       alt="Loading"
     />
   );

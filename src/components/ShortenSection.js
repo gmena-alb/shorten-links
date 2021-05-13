@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
-import bg from '../images/bg-shorten-mobile.svg';
+import bgMobile from '../images/bg-shorten-mobile.svg';
+import bgDesktop from '../images/bg-shorten-desktop.svg';
 import Spinner from './Spinner';
 import { FaCopy } from 'react-icons/fa';
 
@@ -49,7 +50,7 @@ const ShortenSection = () => {
         onChange={(e) => setQuery(e.target.value)}
       />
       {loading && <Spinner />}
-      {shortenUrl && (
+      {shortenUrl && !loading && (
         <div className="link-container" onClick={() => copyText()}>
           <p>{shortenUrl}</p>
           <div className="copy-container">
@@ -65,7 +66,7 @@ const ShortenSection = () => {
 };
 
 const Wrapper = styled.section`
-  background: url(${bg}), var(--color-violet);
+  background: url(${bgMobile}), var(--color-violet);
   background-repeat: no-repeat;
   background-position-x: right;
   display: flex;
@@ -74,6 +75,18 @@ const Wrapper = styled.section`
   margin: 4.5rem 2.5rem;
   border-radius: 8px;
   position: relative;
+  @media (min-width: 1440px) {
+    max-width: 122rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 78% 17%;
+    grid-gap: 3rem;
+    padding: 5rem;
+    background: url(${bgDesktop}), var(--color-violet);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+  }
   .message {
     position: absolute;
     top: 50%;
@@ -89,6 +102,12 @@ const Wrapper = styled.section`
       rgb(0 0 0 / 9%) 0px -3px 5px;
     animation-name: fadeUp;
     animation-duration: 3s;
+    @media (min-width: 1440px) {
+      right: 0;
+      left: unset;
+      transform: translate(-45%, -88%);
+      font-size: 1.5rem;
+    }
   }
   .input-url {
     padding: 1.5rem 0;
@@ -102,7 +121,13 @@ const Wrapper = styled.section`
     ::placeholder {
       color: var(--color-grey-violet);
       font-family: 'Poppins', sans-serif;
-      padding-left: 1.5rem;
+      padding: 0;
+      grid-column: 1;
+      grid-row: 1;
+    }
+    @media (min-width: 1440px) {
+      flex: 1;
+      margin-bottom: 0;
     }
   }
   .link-container {
@@ -115,6 +140,11 @@ const Wrapper = styled.section`
     justify-content: space-between;
     border: 2px solid white;
     cursor: pointer;
+    @media (min-width: 1440px) {
+      grid-row: 2;
+      grid-column-end: 3;
+      grid-column-start: 1;
+    }
     p {
       color: white;
       padding: 1rem;
@@ -140,6 +170,10 @@ const Wrapper = styled.section`
     margin-top: 0.85rem;
     padding: 1.5rem 0;
     font-weight: 700;
+    @media (min-width: 1440px) {
+      margin: 0;
+      padding: 0 3rem;
+    }
   }
 `;
 
