@@ -82,6 +82,7 @@ const Wrapper = styled.footer`
     justify-content: center;
     color: var(--color-white);
     font-size: 2.7rem;
+    cursor: pointer;
     @media (min-width: 1440px) {
       padding: 0;
     }
@@ -91,6 +92,12 @@ const Wrapper = styled.footer`
         margin-right: 2rem;
       }
     }
+  }
+  a {
+    transition: color 0.2s;
+  }
+  a:hover {
+    color: var(--color-cyan);
   }
 `;
 

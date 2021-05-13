@@ -121,7 +121,6 @@ const Wrapper = styled.nav`
         align-items: center;
         border: none;
       }
-
       li:not(:last-child) {
         margin-bottom: 4.3rem;
         @media (min-width: 1440px) {
@@ -138,6 +137,12 @@ const Wrapper = styled.nav`
         @media (min-width: 1440px) {
           margin: 0 0 0 3rem;
         }
+      }
+      a {
+        transition: color 0.2s;
+      }
+      a:hover {
+        color: black;
       }
     }
     .account-container {

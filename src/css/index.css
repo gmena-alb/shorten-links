@@ -9,6 +9,7 @@ Variables
 :root {
   /* Primary Colors */
   --color-cyan: hsl(180, 66%, 49%);
+  --color-cyan-light: hsl(180, 58%, 75%);
   --color-violet: hsl(257, 27%, 26%);
 
   /* Secondary Colors */
@@ -71,8 +72,13 @@ a {
   color: white;
   font-size: 1.8rem;
   display: inline-block;
-
+  cursor: pointer;
   letter-spacing: 0.1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-blue:hover {
+  background-color: var(--color-cyan-light);
 }
 
 @keyframes fadeUp {
