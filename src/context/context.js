@@ -12,6 +12,8 @@ const AppProvider = ({ children }) => {
   };
 
   const toggleMenu = () => {
+    console.log('hola');
+    console.log(showLinks);
     setShowLinks(!showLinks);
   };
 

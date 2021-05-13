@@ -18,7 +18,7 @@ const Footer = () => {
           </div>
         );
       })}
-      <ul class="social">
+      <ul className="social">
         {social.map((item) => {
           const { id, link, icon } = item;
           return (

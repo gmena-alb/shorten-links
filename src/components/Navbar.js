@@ -84,9 +84,7 @@ const Wrapper = styled.nav`
       cursor: pointer;
     }
   }
-  .show-links-container {
-    display: block;
-  }
+
   .links-container {
     display: none;
     margin-top: 2.6rem;
@@ -104,7 +102,6 @@ const Wrapper = styled.nav`
     justify-content: space-between;
     @media (min-width: 1440px) {
       background-color: transparent;
-      display: flex;
       flex: 1;
       position: relative;
       transform: none;
@@ -116,6 +113,7 @@ const Wrapper = styled.nav`
       font-weight: 700;
       letter-spacing: 0.1rem;
     }
+
     .links {
       border-bottom: 1px solid var(--color-grey);
       @media (min-width: 1440px) {
@@ -169,6 +167,12 @@ const Wrapper = styled.nav`
           color: var(--color-white);
         }
       }
+    }
+  }
+  .show-links-container {
+    display: block;
+    @media (min-width: 1440px) {
+      display: flex;
     }
   }
 `;

@@ -14,18 +14,15 @@ const BulletSection = () => {
       </div>
       <div className="bullet-points">
         {bulletPoints.map((item) => {
-          const { key, image, title, text } = item;
-          console.log({ image });
+          const { id, image, title, text } = item;
           return (
-            <>
-              <div key={key} className="bullet-point">
-                <div className="image-container">
-                  <img src={image} alt="icon" />
-                </div>
-                <h3>{title}</h3>
-                <p>{text}</p>
+            <div key={id} className="bullet-point">
+              <div className="image-container">
+                <img src={image} alt="icon" />
               </div>
-            </>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </div>
           );
         })}
       </div>
@@ -118,6 +115,7 @@ const Wrapper = styled.section`
           width: 34px;
           bottom: -63px;
           left: -50%;
+          top: unset;
         }
       }
     }
