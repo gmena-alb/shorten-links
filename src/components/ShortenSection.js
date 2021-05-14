@@ -138,7 +138,7 @@ const Wrapper = styled.section`
       animation-duration: 3s;
       @media (min-width: 1440px) {
         right: 7.5rem;
-        top: 65%;
+        top: 50%;
         left: unset;
         transform: translate(-45%, -86%);
         font-size: 1.5rem;
