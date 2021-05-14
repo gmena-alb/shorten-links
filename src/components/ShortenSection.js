@@ -15,9 +15,19 @@ const ShortenSection = () => {
     query,
     setQuery,
     listUrl,
+    getLocalStorage,
+    updateLocalStorage,
   } = useGlobalContext();
 
   const url = 'https://api.shrtco.de/v2/shorten?url=';
+
+  useEffect(() => {
+    getLocalStorage();
+  }, []);
+
+  useEffect(() => {
+    updateLocalStorage();
+  }, [listUrl]);
 
   return (
     <Wrapper>

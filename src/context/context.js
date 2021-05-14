@@ -11,7 +11,6 @@ const AppProvider = ({ children }) => {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [query, setQuery] = useState('');
-  const [shortenUrl, setShortenUrl] = useState('');
   const [listUrl, setListUrl] = useState([]);
 
   const showMenuDesktop = (width) => {
@@ -37,7 +36,6 @@ const AppProvider = ({ children }) => {
     await axios
       .get(`${url}${query}`)
       .then((response) => {
-        setShortenUrl(response.data.result.full_short_link);
         setListUrl([
           ...listUrl,
           { query: query, shortenUrl: response.data.result.full_short_link },
@@ -49,6 +47,18 @@ const AppProvider = ({ children }) => {
         setError(true);
         setLoading(false);
       });
+  };
+
+  const getLocalStorage = () => {
+    const stored = localStorage.getItem('links');
+    const initial = stored ? JSON.parse(stored) : [];
+    setListUrl(initial);
+    localStorage.setItem('links', JSON.stringify(listUrl));
+  };
+
+  const updateLocalStorage = () => {
+    const stored = localStorage.getItem('links');
+    stored && localStorage.setItem('links', JSON.stringify(listUrl));
   };
 
   return (
@@ -67,6 +77,9 @@ const AppProvider = ({ children }) => {
         setQuery,
         handleRequest,
         listUrl,
+        setListUrl,
+        getLocalStorage,
+        updateLocalStorage,
       }}
     >
       {children}
