@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useGlobalContext } from '../context/context';
 
-const CopyButton = () => {
+const CopyButton = ({ url }) => {
   const [isTextCopied, setIsTextCopied] = useState(false);
 
-  const { shortenUrl } = useGlobalContext();
-
   const copyText = () => {
-    navigator.clipboard.writeText(shortenUrl);
-    setIsTextCopied(true);
+    navigator.clipboard.writeText(url).then(setIsTextCopied(true));
   };
 
   useEffect(() => {
@@ -21,7 +17,7 @@ const CopyButton = () => {
 
   return (
     <div
-      className={`${isTextCopied ? 'btn-dark' : 'btn-blue'}`}
+      className={`${isTextCopied ? 'btn-dark' : 'btn-blue-copy'}`}
       onClick={copyText}
     >{`${isTextCopied ? 'Copied' : 'Copy'}`}</div>
   );

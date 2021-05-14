@@ -77,7 +77,8 @@ a {
   transition: background-color 0.2s ease-in-out;
 }
 
-.btn-blue:hover {
+.btn-blue:hover,
+.btn-blue-copy:hover {
   background-color: var(--color-cyan-light);
 }
 

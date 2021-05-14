@@ -7,7 +7,7 @@ const Link = ({ longUrl, shortenUrl }) => {
     <Wrapper>
       <div className="long-url">{longUrl}</div>
       <div className="short-url">{shortenUrl}</div>
-      <CopyButton />
+      <CopyButton url={shortenUrl} />
     </Wrapper>
   );
 };
@@ -48,19 +48,25 @@ const Wrapper = styled.div`
     }
   }
 
-  .btn-blue {
+  .btn-blue-copy {
     text-align: center;
-    text-align: center;
-    padding: 0.5rem 3rem;
+    padding: 1rem 3rem;
     font-size: 1.5rem;
+    margin-top: 0.85rem;
+    border-radius: 6px;
+    background-color: var(--color-cyan);
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+    transition: background-color 0.2s ease-in-out;
   }
 
   .btn-dark {
     border-radius: 6px;
-    border: none;
     margin-top: 0.85rem;
-    padding: 1.5rem 0;
-    font-weight: 700;
+    border: none;
+    padding: 1rem 3rem;
     text-align: center;
     display: inline-block;
     letter-spacing: 0.1rem;
@@ -68,8 +74,6 @@ const Wrapper = styled.div`
     color: white;
     font-size: 1.6rem;
     background-color: var(--color-blue-dark);
-    @media (min-width: 1440px) {
-    }
   }
 `;
 
