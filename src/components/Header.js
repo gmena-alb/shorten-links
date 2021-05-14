@@ -31,9 +31,8 @@ const Wrapper = styled.header`
     padding: 5.8rem 16.6rem;
   }
   .header-content {
+    text-align: center;
     @media (min-width: 1440px) {
-      text-align: center;
-
       display: flex;
       margin-top: 7rem;
     }
