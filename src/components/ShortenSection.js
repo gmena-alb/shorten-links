@@ -63,7 +63,6 @@ const ShortenSection = () => {
   return (
     <Wrapper>
       <div className="container">
-        {isTextCopied && <div className="message">Copied to clipboard!</div>}
         <input
           className={`${error ? 'input-url input-error' : 'input-url'}`}
           type="text"
@@ -77,6 +76,7 @@ const ShortenSection = () => {
           Shorten It!
         </button>
         <div className="links-list">
+          {isTextCopied && <div className="message">Copied to clipboard!</div>}
           {listUrl.map((url, index) => {
             const { query, shortenUrl } = url;
             return (
@@ -110,6 +110,7 @@ const Wrapper = styled.section`
     flex-direction: column;
     border-radius: 8px;
     position: relative;
+
     @media (min-width: 1440px) {
       display: grid;
       grid-template-columns: 78% 17%;
@@ -136,9 +137,10 @@ const Wrapper = styled.section`
       animation-name: fadeUp;
       animation-duration: 3s;
       @media (min-width: 1440px) {
-        right: 0;
+        right: 7.5rem;
+        top: 65%;
         left: unset;
-        transform: translate(-45%, -88%);
+        transform: translate(-45%, -86%);
         font-size: 1.5rem;
       }
     }
@@ -193,12 +195,26 @@ const Wrapper = styled.section`
         border: 2px solid white;
         cursor: pointer;
         color: var(--color-white);
+        position: relative;
         @media (min-width: 1440px) {
-          padding: 1.3rem 1rem;
         }
-        p {
-          color: white;
-          padding: 1rem;
+        .long-url,
+        .short-url {
+          @media (min-width: 1440px) {
+            padding: 1.3rem 1rem;
+          }
+        }
+        .short-url {
+          @media (min-width: 1440px) {
+            flex: 1;
+            text-align: right;
+            margin-right: 2rem;
+          }
+        }
+        .long-url {
+          @media (min-width: 1440px) {
+            margin-left: 1rem;
+          }
         }
         .copy-container {
           width: 3rem;
