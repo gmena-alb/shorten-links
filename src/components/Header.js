@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Navbar from './Navbar';
 import img from '../images/illustration-working.svg';
@@ -32,6 +32,8 @@ const Wrapper = styled.header`
   }
   .header-content {
     @media (min-width: 1440px) {
+      text-align: center;
+
       display: flex;
       margin-top: 7rem;
     }

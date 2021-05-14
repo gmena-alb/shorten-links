@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { links } from '../links';
 import logo from '../images/logo.svg';
@@ -20,6 +20,7 @@ const Navbar = () => {
       showMenuDesktop(window.innerWidth);
     });
     return () => window.removeEventListener('resize', event);
+    // eslint-disable-next-line
   }, [screenWidth]);
 
   useEffect(() => {
@@ -28,6 +29,7 @@ const Navbar = () => {
     } else {
       setIsDesktop(false);
     }
+    // eslint-disable-next-line
   }, [screenWidth]);
 
   return (
