@@ -25,7 +25,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [https://www.musing-wing-b86738.netlify.app/](musing-wing-b86738.netlify.app/)
+- Live Site URL: [musing-wing-b86738.netlify.app/](https://www.musing-wing-b86738.netlify.app/)
 
 ## My process
 
